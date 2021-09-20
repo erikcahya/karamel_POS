@@ -1,3 +1,4 @@
+import 'package:explore_pos_karamel/signIn.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -152,7 +153,12 @@ class Login extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(16)))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignIn()));
+                          },
                           child: Container(
                             alignment: Alignment.center,
                             child: Text("Daftar",
@@ -162,7 +168,7 @@ class Login extends StatelessWidget {
                                         MediaQuery.of(context).size.height *
                                             0.023,
                                     fontWeight: FontWeight.w700)),
-                            width: MediaQuery.of(context).size.width / 2.8,
+                            width: MediaQuery.of(context).size.width / 3,
                           )),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
@@ -181,7 +187,7 @@ class Login extends StatelessWidget {
                                       0.023,
                                   fontWeight: FontWeight.w700),
                             ),
-                            width: MediaQuery.of(context).size.width / 2.8,
+                            width: MediaQuery.of(context).size.width / 3,
                           )),
                     ],
                   ),
