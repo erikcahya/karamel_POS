@@ -190,7 +190,12 @@ class SignIn extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16)))),
                     onPressed: () {},
-                    child: Text("Masuk"))),
+                    child: Text(
+                      "Masuk",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.026,
+                      ),
+                    ))),
           ],
         ),
       ),
