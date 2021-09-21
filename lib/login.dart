@@ -193,56 +193,6 @@ class Login extends StatelessWidget {
                   ),
                 ),
               )
-              // Positioned(
-              //   top: MediaQuery.of(context).size.height * 0.900,
-              //   bottom: 24,
-              //   right: 24,
-              //   left: 24,
-              //   child: Container(
-              //     child: Row(
-              //       children: <Widget>[
-              //         ElevatedButton(
-              //           onPressed: () {},
-              //           child: Container(
-              //             decoration: BoxDecoration(
-              //                 color: Colors.black,
-              //                 borderRadius:
-              //                     BorderRadius.all(Radius.circular(16))),
-              //             height: MediaQuery.of(context).size.height,
-              //             width: MediaQuery.of(context).size.width / 3,
-              //           ),
-              //         ),
-              //         ElevatedButton(
-              //           onPressed: () {},
-              //           child: Container(
-              //             decoration: BoxDecoration(
-              //                 color: Colors.amber,
-              //                 borderRadius:
-              //                     BorderRadius.all(Radius.circular(16))),
-              //             height: MediaQuery.of(context).size.height,
-              //             width: MediaQuery.of(context).size.width / 3,
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              // Align(
-              //   alignment: Alignment.bottomCenter,
-              //   child: Container(
-              //     color: Colors.amber,
-              //   ),
-              // )
-              // Positioned(
-              //     bottom: 20,
-              //     top: 0,
-              //     right: 30,
-              //     left: 30,
-              //     child: Container(
-              //       height: MediaQuery.of(context).size.height / 20,
-              //       width: MediaQuery.of(context).size.width / 2,
-              //       color: Colors.amber,
-              //     ))
             ],
           ),
         ),
