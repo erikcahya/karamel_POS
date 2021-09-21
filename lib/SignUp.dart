@@ -1,9 +1,7 @@
-import 'package:explore_pos_karamel/ForgotPassword.dart';
-import 'package:explore_pos_karamel/SignUp.dart';
-import 'package:explore_pos_karamel/login.dart';
+import 'package:explore_pos_karamel/signIn.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatelessWidget {
+class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,11 +13,11 @@ class SignIn extends StatelessWidget {
             icon: Icon(Icons.arrow_back_ios_outlined),
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Login()));
+                  context, MaterialPageRoute(builder: (context) => SignIn()));
             },
           ),
           title: Text(
-            "Masuk",
+            "Daftar",
             textAlign: TextAlign.left,
           ),
         ),
@@ -32,21 +30,21 @@ class SignIn extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                    height: MediaQuery.of(context).size.height / 1.9,
+                    height: MediaQuery.of(context).size.height / 1.56,
                     width: MediaQuery.of(context).size.width / 1.1,
                     color: Colors.white,
                     child: Stack(
                       children: <Widget>[
                         Positioned(
-                          top: MediaQuery.of(context).size.height * 0.07,
-                          bottom: MediaQuery.of(context).size.height * 0.3,
+                          top: MediaQuery.of(context).size.height * 0.05,
+                          bottom: MediaQuery.of(context).size.height * 0.4,
                           left: MediaQuery.of(context).size.width * 0.044,
                           right: MediaQuery.of(context).size.width * 0.044,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Selamat Datang",
+                                "Silahkan isi formulir pendaftaran",
                                 style: TextStyle(
                                     fontFamily: "Poppins",
                                     fontSize:
@@ -54,23 +52,41 @@ class SignIn extends StatelessWidget {
                                             0.02,
                                     fontWeight: FontWeight.w400),
                               ),
-                              Text("Gunakan surel dan kata sandi Anda.",
-                                  style: TextStyle(
-                                      fontFamily: "Poppins",
-                                      fontSize:
-                                          MediaQuery.of(context).size.height *
-                                              0.02,
-                                      fontWeight: FontWeight.w400))
                             ],
                           ),
                         ),
                         Positioned(
-                          top: MediaQuery.of(context).size.height * 0.2,
-                          bottom: MediaQuery.of(context).size.height * 0.007,
+                          top: MediaQuery.of(context).size.height * 0.13,
+                          bottom: MediaQuery.of(context).size.height * 0.004,
                           left: MediaQuery.of(context).size.width * 0.024,
                           right: MediaQuery.of(context).size.width * 0.024,
                           child: Column(
                             children: [
+                              Container(
+                                margin: EdgeInsets.fromLTRB(0, 5, 0, 16),
+                                height: MediaQuery.of(context).size.height / 11,
+                                width: MediaQuery.of(context).size.width / 1,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      hintText: "Nama Lengkap",
+                                      hintStyle: TextStyle(
+                                          color: Color(0xFFF77A0F7),
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.02,
+                                          fontWeight: FontWeight.w400,
+                                          fontFamily: "Proppins"),
+                                      contentPadding: EdgeInsets.all(20),
+                                      prefixIcon: Icon(
+                                        Icons.person,
+                                        color: Color(0xFFF3D527F),
+                                      ),
+                                      border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(8)))),
+                                ),
+                              ),
                               Container(
                                 margin: EdgeInsets.fromLTRB(0, 5, 0, 16),
                                 height: MediaQuery.of(context).size.height / 11,
@@ -121,43 +137,41 @@ class SignIn extends StatelessWidget {
                                               Radius.circular(8)))),
                                 ),
                               ),
+                              Container(
+                                margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
+                                height: MediaQuery.of(context).size.height / 11,
+                                width: MediaQuery.of(context).size.width / 1,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      hintText: "Konfirmasi Kata Sandi",
+                                      hintStyle: TextStyle(
+                                          color: Color(0xFFF77A0F7),
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.02,
+                                          fontWeight: FontWeight.w400,
+                                          fontFamily: "Proppins"),
+                                      contentPadding: EdgeInsets.all(20),
+                                      prefixIcon: Icon(
+                                        Icons.vpn_key,
+                                        color: Color(0xFFF3D527F),
+                                      ),
+                                      border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(8)))),
+                                ),
+                              ),
                             ],
                           ),
                         ),
-                        Positioned(
-                            top: MediaQuery.of(context).size.height * 0.44,
-                            bottom: MediaQuery.of(context).size.height * 0.05,
-                            left: MediaQuery.of(context).size.width * 0.034,
-                            right: MediaQuery.of(context).size.width * 0.034,
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            ForgotPassword()));
-                              },
-                              child: Container(
-                                alignment: Alignment.topRight,
-                                child: Text(
-                                  "Lupa kata sandi ?",
-                                  style: TextStyle(
-                                      color: Color(0xFFF77A0F7),
-                                      fontSize:
-                                          MediaQuery.of(context).size.height *
-                                              0.02,
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: "Proppins"),
-                                ),
-                              ),
-                            )),
                       ],
                     )),
               ),
             ),
             Positioned(
-                top: MediaQuery.of(context).size.height * 0.67,
-                bottom: MediaQuery.of(context).size.height * 0.19,
+                top: MediaQuery.of(context).size.height * 0.75,
+                bottom: MediaQuery.of(context).size.height * 0.06,
                 left: MediaQuery.of(context).size.width * 0.07,
                 right: MediaQuery.of(context).size.width * 0.07,
                 child: Container(
@@ -176,12 +190,7 @@ class SignIn extends StatelessWidget {
                             fontFamily: "Proppins"),
                       ),
                       TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignUp()));
-                          },
+                          onPressed: () {},
                           child: Text("Daftar Sekarang",
                               style: TextStyle(
                                   color: Color(0xFFF77A0F7),
@@ -193,8 +202,8 @@ class SignIn extends StatelessWidget {
                   ),
                 )),
             Positioned(
-                top: MediaQuery.of(context).size.height * 0.54,
-                bottom: MediaQuery.of(context).size.height * 0.32,
+                top: MediaQuery.of(context).size.height * 0.65,
+                bottom: MediaQuery.of(context).size.height * 0.21,
                 left: MediaQuery.of(context).size.width * 0.07,
                 right: MediaQuery.of(context).size.width * 0.07,
                 child: ElevatedButton(
@@ -205,7 +214,7 @@ class SignIn extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(16)))),
                     onPressed: () {},
                     child: Text(
-                      "Masuk",
+                      "Daftar",
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.height * 0.026,
                       ),

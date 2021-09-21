@@ -1,3 +1,6 @@
+import 'dart:js';
+
+import 'package:explore_pos_karamel/SignUp.dart';
 import 'package:explore_pos_karamel/signIn.dart';
 import 'package:flutter/material.dart';
 
@@ -157,7 +160,7 @@ class Login extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SignIn()));
+                                    builder: (context) => SignUp()));
                           },
                           child: Container(
                             alignment: Alignment.center,
@@ -176,7 +179,12 @@ class Login extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(16)))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignIn()));
+                          },
                           child: Container(
                             alignment: Alignment.center,
                             child: Text(
