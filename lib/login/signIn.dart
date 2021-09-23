@@ -1,24 +1,27 @@
-import 'package:explore_pos_karamel/SignUp.dart';
-import 'package:explore_pos_karamel/signIn.dart';
+import 'package:explore_pos_karamel/home/home.dart';
+import 'package:explore_pos_karamel/login/ForgotPassword.dart';
+import 'package:explore_pos_karamel/login/SignUp.dart';
+import 'package:explore_pos_karamel/login/login.dart';
 import 'package:flutter/material.dart';
 
-class ForgotPassword extends StatelessWidget {
+class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Color(0xFFF77A0F7),
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios_outlined),
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => SignIn()));
+                  context, MaterialPageRoute(builder: (context) => Login()));
             },
           ),
           title: Text(
-            "Lupa Kata Sandi",
+            "Masuk",
             textAlign: TextAlign.left,
           ),
         ),
@@ -45,7 +48,7 @@ class ForgotPassword extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Silahkan masukkan alamat surel anda untuk mereset kata sandi. Tautan konfirmasi akan dikirimkan ke alamat surel anda.",
+                                "Selamat Datang",
                                 style: TextStyle(
                                     fontFamily: "Poppins",
                                     fontSize:
@@ -53,6 +56,13 @@ class ForgotPassword extends StatelessWidget {
                                             0.02,
                                     fontWeight: FontWeight.w400),
                               ),
+                              Text("Gunakan surel dan kata sandi Anda.",
+                                  style: TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontSize:
+                                          MediaQuery.of(context).size.height *
+                                              0.02,
+                                      fontWeight: FontWeight.w400))
                             ],
                           ),
                         ),
@@ -88,16 +98,68 @@ class ForgotPassword extends StatelessWidget {
                                               Radius.circular(8)))),
                                 ),
                               ),
+                              Container(
+                                margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
+                                height: MediaQuery.of(context).size.height / 11,
+                                width: MediaQuery.of(context).size.width / 1,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      hintText: "Kata Sandi",
+                                      hintStyle: TextStyle(
+                                          color: Color(0xFFF77A0F7),
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.02,
+                                          fontWeight: FontWeight.w400,
+                                          fontFamily: "Proppins"),
+                                      contentPadding: EdgeInsets.all(20),
+                                      prefixIcon: Icon(
+                                        Icons.vpn_key,
+                                        color: Color(0xFFF3D527F),
+                                      ),
+                                      border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(8)))),
+                                ),
+                              ),
                             ],
                           ),
                         ),
+                        Positioned(
+                            top: MediaQuery.of(context).size.height * 0.44,
+                            bottom: MediaQuery.of(context).size.height * 0.05,
+                            left: MediaQuery.of(context).size.width * 0.034,
+                            right: MediaQuery.of(context).size.width * 0.034,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ForgotPassword()));
+                              },
+                              child: Container(
+                                alignment: Alignment.topRight,
+                                child: Text(
+                                  "Lupa kata sandi ?",
+                                  style: TextStyle(
+                                      color: Color(0xFFF77A0F7),
+                                      fontSize:
+                                          MediaQuery.of(context).size.height *
+                                              0.02,
+                                      fontWeight: FontWeight.w400,
+                                      fontFamily: "Proppins"),
+                                ),
+                              ),
+                            )),
                       ],
                     )),
               ),
             ),
             Positioned(
-                top: MediaQuery.of(context).size.height * 0.49,
-                bottom: MediaQuery.of(context).size.height * 0.35,
+                top: MediaQuery.of(context).size.height * 0.67,
+                bottom: MediaQuery.of(context).size.height * 0.19,
                 left: MediaQuery.of(context).size.width * 0.07,
                 right: MediaQuery.of(context).size.width * 0.07,
                 child: Container(
@@ -133,8 +195,8 @@ class ForgotPassword extends StatelessWidget {
                   ),
                 )),
             Positioned(
-                top: MediaQuery.of(context).size.height * 0.39,
-                bottom: MediaQuery.of(context).size.height * 0.47,
+                top: MediaQuery.of(context).size.height * 0.54,
+                bottom: MediaQuery.of(context).size.height * 0.32,
                 left: MediaQuery.of(context).size.width * 0.07,
                 right: MediaQuery.of(context).size.width * 0.07,
                 child: ElevatedButton(
@@ -143,7 +205,10 @@ class ForgotPassword extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16)))),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                    },
                     child: Text(
                       "Masuk",
                       style: TextStyle(

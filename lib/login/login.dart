@@ -1,7 +1,6 @@
-import 'dart:js';
+import 'package:explore_pos_karamel/login/SignUp.dart';
+import 'package:explore_pos_karamel/login/signIn.dart';
 
-import 'package:explore_pos_karamel/SignUp.dart';
-import 'package:explore_pos_karamel/signIn.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -11,6 +10,7 @@ class Login extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Stack(
             children: [
               Container(

@@ -1,4 +1,4 @@
-import 'package:explore_pos_karamel/signIn.dart';
+import 'package:explore_pos_karamel/login/signIn.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
@@ -7,6 +7,7 @@ class SignUp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Color(0xFFF77A0F7),
           leading: IconButton(
@@ -40,19 +41,13 @@ class SignUp extends StatelessWidget {
                           bottom: MediaQuery.of(context).size.height * 0.4,
                           left: MediaQuery.of(context).size.width * 0.044,
                           right: MediaQuery.of(context).size.width * 0.044,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Silahkan isi formulir pendaftaran",
-                                style: TextStyle(
-                                    fontFamily: "Poppins",
-                                    fontSize:
-                                        MediaQuery.of(context).size.height *
-                                            0.02,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
+                          child: Text(
+                            "Silahkan isi formulir pendaftaran",
+                            style: TextStyle(
+                                fontFamily: "Poppins",
+                                fontSize:
+                                    MediaQuery.of(context).size.height * 0.02,
+                                fontWeight: FontWeight.w400),
                           ),
                         ),
                         Positioned(
@@ -117,6 +112,7 @@ class SignUp extends StatelessWidget {
                                 height: MediaQuery.of(context).size.height / 11,
                                 width: MediaQuery.of(context).size.width / 1,
                                 child: TextField(
+                                  obscureText: true,
                                   decoration: InputDecoration(
                                       hintText: "Kata Sandi",
                                       hintStyle: TextStyle(
@@ -142,6 +138,7 @@ class SignUp extends StatelessWidget {
                                 height: MediaQuery.of(context).size.height / 11,
                                 width: MediaQuery.of(context).size.width / 1,
                                 child: TextField(
+                                  obscureText: true,
                                   decoration: InputDecoration(
                                       hintText: "Konfirmasi Kata Sandi",
                                       hintStyle: TextStyle(
@@ -182,7 +179,7 @@ class SignUp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Belum memiliki akun?",
+                        "Sudah Memiliki Akun?",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: MediaQuery.of(context).size.height * 0.02,
@@ -190,8 +187,13 @@ class SignUp extends StatelessWidget {
                             fontFamily: "Proppins"),
                       ),
                       TextButton(
-                          onPressed: () {},
-                          child: Text("Daftar Sekarang",
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignIn()));
+                          },
+                          child: Text("Masuk Sekarang",
                               style: TextStyle(
                                   color: Color(0xFFF77A0F7),
                                   fontSize:
