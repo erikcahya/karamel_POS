@@ -25,7 +25,7 @@ class Login extends StatelessWidget {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                                color: Color(0xFFFD8E4FD),
+                                color: Color(0xFFFFFE1A8),
                                 borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.elliptical(300, 100),
                                     bottomRight: Radius.elliptical(300, 100))),
@@ -96,7 +96,7 @@ class Login extends StatelessWidget {
                                               fontSize: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.045,
+                                                  0.04,
                                               fontWeight: FontWeight.w600,
                                               fontFamily: "Poppins"),
                                         ),
@@ -111,7 +111,7 @@ class Login extends StatelessWidget {
                                               fontSize: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.037,
+                                                  0.03,
                                               fontWeight: FontWeight.w400,
                                               fontFamily: "Poppins"),
                                         ),
@@ -142,8 +142,8 @@ class Login extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.900,
-                bottom: MediaQuery.of(context).size.height * 0.04,
+                top: MediaQuery.of(context).size.height * 0.88,
+                bottom: MediaQuery.of(context).size.height * 0.07,
                 right: MediaQuery.of(context).size.width * 0.07,
                 left: MediaQuery.of(context).size.width * 0.07,
                 child: Container(
@@ -152,7 +152,7 @@ class Login extends StatelessWidget {
                     children: <Widget>[
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFFD8E4FD),
+                              primary: Color(0xFFFFFE1A8),
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(16)))),
@@ -166,7 +166,7 @@ class Login extends StatelessWidget {
                             alignment: Alignment.center,
                             child: Text("Daftar",
                                 style: TextStyle(
-                                    color: Colors.blue,
+                                    color: Color(0xFFFFFBD41),
                                     fontSize:
                                         MediaQuery.of(context).size.height *
                                             0.023,
@@ -175,7 +175,7 @@ class Login extends StatelessWidget {
                           )),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: Color(0xFFF77A0F7),
+                              primary: Color(0xFFFFFBD41),
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(16)))),

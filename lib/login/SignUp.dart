@@ -9,7 +9,7 @@ class SignUp extends StatelessWidget {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: Color(0xFFF77A0F7),
+          backgroundColor: Color(0xFFFFFBD41),
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios_outlined),
             onPressed: () {
@@ -65,7 +65,7 @@ class SignUp extends StatelessWidget {
                                   decoration: InputDecoration(
                                       hintText: "Nama Lengkap",
                                       hintStyle: TextStyle(
-                                          color: Color(0xFFF77A0F7),
+                                          color: Color(0xFFFFFBD41),
                                           fontSize: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -75,9 +75,18 @@ class SignUp extends StatelessWidget {
                                       contentPadding: EdgeInsets.all(20),
                                       prefixIcon: Icon(
                                         Icons.person,
-                                        color: Color(0xFFF3D527F),
+                                        color: Color(0xFFFB7B7B7),
                                       ),
-                                      border: OutlineInputBorder(
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(8))),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(8)))),
                                 ),
@@ -90,7 +99,7 @@ class SignUp extends StatelessWidget {
                                   decoration: InputDecoration(
                                       hintText: "Surel",
                                       hintStyle: TextStyle(
-                                          color: Color(0xFFF77A0F7),
+                                          color: Color(0xFFFFFBD41),
                                           fontSize: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -100,9 +109,18 @@ class SignUp extends StatelessWidget {
                                       contentPadding: EdgeInsets.all(20),
                                       prefixIcon: Icon(
                                         Icons.mail,
-                                        color: Color(0xFFF3D527F),
+                                        color: Color(0xFFFB7B7B7),
                                       ),
-                                      border: OutlineInputBorder(
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(8))),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(8)))),
                                 ),
@@ -116,7 +134,7 @@ class SignUp extends StatelessWidget {
                                   decoration: InputDecoration(
                                       hintText: "Kata Sandi",
                                       hintStyle: TextStyle(
-                                          color: Color(0xFFF77A0F7),
+                                          color: Color(0xFFFFFBD41),
                                           fontSize: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -126,9 +144,18 @@ class SignUp extends StatelessWidget {
                                       contentPadding: EdgeInsets.all(20),
                                       prefixIcon: Icon(
                                         Icons.vpn_key,
-                                        color: Color(0xFFF3D527F),
+                                        color: Color(0xFFFB7B7B7),
                                       ),
-                                      border: OutlineInputBorder(
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(8))),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(8)))),
                                 ),
@@ -142,7 +169,7 @@ class SignUp extends StatelessWidget {
                                   decoration: InputDecoration(
                                       hintText: "Konfirmasi Kata Sandi",
                                       hintStyle: TextStyle(
-                                          color: Color(0xFFF77A0F7),
+                                          color: Color(0xFFFFFBD41),
                                           fontSize: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -152,9 +179,18 @@ class SignUp extends StatelessWidget {
                                       contentPadding: EdgeInsets.all(20),
                                       prefixIcon: Icon(
                                         Icons.vpn_key,
-                                        color: Color(0xFFF3D527F),
+                                        color: Color(0xFFFB7B7B7),
                                       ),
-                                      border: OutlineInputBorder(
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(8))),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFFFBD41),
+                                              style: BorderStyle.solid),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(8)))),
                                 ),
@@ -195,7 +231,7 @@ class SignUp extends StatelessWidget {
                           },
                           child: Text("Masuk Sekarang",
                               style: TextStyle(
-                                  color: Color(0xFFF77A0F7),
+                                  color: Color(0xFFFFFBD41),
                                   fontSize:
                                       MediaQuery.of(context).size.height * 0.02,
                                   fontWeight: FontWeight.w400,
@@ -210,7 +246,7 @@ class SignUp extends StatelessWidget {
                 right: MediaQuery.of(context).size.width * 0.07,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: Color(0xFFF77A0F7),
+                        primary: Color(0xFFFFFBD41),
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(16)))),

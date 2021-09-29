@@ -15,8 +15,98 @@ class _HomeState extends State<Home> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         drawer: Container(
-          width: MediaQuery.of(context).size.width * 0.5,
-          color: Colors.black,
+          color: Colors.white,
+          width: MediaQuery.of(context).size.width * 0.7,
+          child: Stack(
+            children: [
+              Positioned(
+                  top: MediaQuery.of(context).size.height * 0.04,
+                  bottom: MediaQuery.of(context).size.height * 0.45,
+                  left: 16,
+                  right: 16,
+                  child: Container(
+                    child: Stack(
+                      children: [
+                        Positioned(
+                            top: MediaQuery.of(context).size.height * 0.12,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              color: Colors.amber,
+                              child: Column(
+                                children: <Widget>[
+                                  Flexible(
+                                      flex: 1,
+                                      child: Container(
+                                        color: Colors.black,
+                                      ))
+                                ],
+                              ),
+                            )),
+                        Positioned(
+                            top: 0,
+                            bottom: 258,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: <Widget>[
+                                  Flexible(
+                                    flex: 1,
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 16),
+                                      height:
+                                          MediaQuery.of(context).size.height,
+                                      width: MediaQuery.of(context).size.width,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xFFFFFBD41),
+                                      ),
+                                    ),
+                                  ),
+                                  Flexible(
+                                    flex: 2,
+                                    child: Container(
+                                      height:
+                                          MediaQuery.of(context).size.height,
+                                      width: MediaQuery.of(context).size.width,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Flexible(
+                                            child: Text(
+                                              "Rizal Genjreng",
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Color(0xFFF0C1019),
+                                                  fontFamily: "Poppins"),
+                                            ),
+                                          ),
+                                          Flexible(
+                                              child: Text(
+                                                  "rizalgenjreng@gmail.com",
+                                                  style: TextStyle(
+                                                      fontSize: 11,
+                                                      color: Color(0xFFF0C1019),
+                                                      fontFamily: "Poppins"))),
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )),
+                      ],
+                    ),
+                    color: Color(0xFFF77A0F7),
+                  )),
+            ],
+          ),
         ),
         body: Container(
           height: MediaQuery.of(context).size.height,
@@ -26,7 +116,7 @@ class _HomeState extends State<Home> {
             children: [
               Positioned(
                 top: 0,
-                bottom: MediaQuery.of(context).size.height * 0.7,
+                bottom: MediaQuery.of(context).size.height * 0.71,
                 left: 0,
                 right: 0,
                 child: AppBar(
@@ -34,10 +124,10 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.only(
                     bottomLeft: Radius.elliptical(
                         MediaQuery.of(context).size.width * 0.99,
-                        MediaQuery.of(context).size.height * 0.35),
+                        MediaQuery.of(context).size.height * 0.3),
                     bottomRight: Radius.elliptical(
                         MediaQuery.of(context).size.width * 0.99,
-                        MediaQuery.of(context).size.height * 0.35),
+                        MediaQuery.of(context).size.height * 0.3),
                   )),
                   title: Container(
                     child: Row(
@@ -87,6 +177,7 @@ class _HomeState extends State<Home> {
                                 height: MediaQuery.of(context).size.height,
                                 width: MediaQuery.of(context).size.width,
                                 child: DropdownButton(
+                                  isDense: false,
                                   icon: Icon(
                                     Icons.keyboard_arrow_down,
                                     color: Color(0xFFF77A0F7),
@@ -150,11 +241,46 @@ class _HomeState extends State<Home> {
               ),
               Positioned(
                   top: MediaQuery.of(context).size.height * 0.36,
-                  bottom: MediaQuery.of(context).size.height * 0.26,
+                  bottom: MediaQuery.of(context).size.height * 0.36,
                   left: MediaQuery.of(context).size.width * 0.07,
                   right: MediaQuery.of(context).size.width * 0.07,
                   child: Container(
-                    child: Column(),
+                    child: Column(
+                      children: <Widget>[
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Grafik Penjualan",
+                                style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    fontFamily: "Poppins",
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            )),
+                        Flexible(
+                            flex: 5,
+                            child: Container(
+                              height: MediaQuery.of(context).size.height,
+                              width: MediaQuery.of(context).size.width,
+                              child: Card(
+                                elevation: 3,
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8))),
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height / 2,
+                                  width: MediaQuery.of(context).size.width,
+                                ),
+                              ),
+                            )),
+                      ],
+                    ),
                   ))
             ],
           ),
