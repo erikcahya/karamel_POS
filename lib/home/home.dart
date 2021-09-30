@@ -20,33 +20,55 @@ class _HomeState extends State<Home> {
           child: Stack(
             children: [
               Positioned(
+                top: MediaQuery.of(context).size.height * 0.11,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: ListView(
+                  children: [
+                    sidebarMenu(
+                        "Kategori", AssetImage("assets/streamic_katagori.png")),
+                    sidebarMenu(
+                        "Produk", AssetImage("assets/box-openic_produk.png")),
+                    sidebarMenu("Inventaris",
+                        AssetImage("assets/boxesic_inventaris.png")),
+                    sidebarMenu("Penjualan",
+                        AssetImage("assets/receiptic_penjualan.png")),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              elevation: 1,
+                              side: BorderSide(
+                                color: Color(0xFFFDC3545),
+                              ),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(16))),
+                              primary: Color(0xFFFFFFFFF)),
+                          onPressed: () {},
+                          child: Text(
+                            "Keluar",
+                            style: TextStyle(
+                                color: Color(0xFFFDC3545),
+                                fontSize: 14,
+                                fontFamily: "Poppins"),
+                          )),
+                    )
+                  ],
+                ),
+              ),
+              Positioned(
                   top: MediaQuery.of(context).size.height * 0.04,
-                  bottom: MediaQuery.of(context).size.height * 0.45,
+                  bottom: MediaQuery.of(context).size.height * 0.01,
                   left: 16,
                   right: 16,
                   child: Container(
                     child: Stack(
                       children: [
                         Positioned(
-                            top: MediaQuery.of(context).size.height * 0.12,
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            child: Container(
-                              color: Colors.amber,
-                              child: Column(
-                                children: <Widget>[
-                                  Flexible(
-                                      flex: 1,
-                                      child: Container(
-                                        color: Colors.black,
-                                      ))
-                                ],
-                              ),
-                            )),
-                        Positioned(
                             top: 0,
-                            bottom: 258,
+                            bottom: MediaQuery.of(context).size.height * 0.83,
                             left: 0,
                             right: 0,
                             child: Container(
@@ -56,7 +78,9 @@ class _HomeState extends State<Home> {
                                   Flexible(
                                     flex: 1,
                                     child: Container(
-                                      margin: EdgeInsets.only(right: 16),
+                                      margin: EdgeInsets.only(
+                                        right: 16,
+                                      ),
                                       height:
                                           MediaQuery.of(context).size.height,
                                       width: MediaQuery.of(context).size.width,
@@ -83,7 +107,7 @@ class _HomeState extends State<Home> {
                                               "Rizal Genjreng",
                                               style: TextStyle(
                                                   fontSize: 14,
-                                                  color: Color(0xFFF0C1019),
+                                                  color: Color(0xFFF808080),
                                                   fontFamily: "Poppins"),
                                             ),
                                           ),
@@ -92,7 +116,7 @@ class _HomeState extends State<Home> {
                                                   "rizalgenjreng@gmail.com",
                                                   style: TextStyle(
                                                       fontSize: 11,
-                                                      color: Color(0xFFF0C1019),
+                                                      color: Color(0xFFFE5E5E5),
                                                       fontFamily: "Poppins"))),
                                         ],
                                       ),
@@ -103,7 +127,6 @@ class _HomeState extends State<Home> {
                             )),
                       ],
                     ),
-                    color: Color(0xFFF77A0F7),
                   )),
             ],
           ),
@@ -288,6 +311,83 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+  var trailingIcon = true;
+  ExpansionTile sidebarMenu(String judul, AssetImage iconGambar) {
+    return ExpansionTile(
+      trailing: trailingIcon == false
+          ? Icon(
+              Icons.chevron_right,
+              color: Color(0xFFFFFBD41),
+            )
+          : Icon(
+              Icons.keyboard_arrow_down,
+              color: Color(0xFFFFFBD41),
+            ),
+      leading: Image(
+        image: iconGambar,
+        height: MediaQuery.of(context).size.height * 0.025,
+        width: MediaQuery.of(context).size.width * 0.06,
+      ),
+      backgroundColor: Colors.transparent,
+      title: Text(
+        judul,
+        style: TextStyle(
+            color: Color(0xFFFE5E5E5),
+            fontSize: 14,
+            fontWeight: FontWeight.w400),
+        textAlign: TextAlign.left,
+      ),
+      children: [
+        Text(
+          'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffee species.',
+          style: TextStyle(fontSize: 15),
+          maxLines: 5,
+          softWrap: true,
+          textAlign: TextAlign.start,
+        ),
+      ],
+    );
+  }
+
+  // Container sideBarMenu(BuildContext context, Color warna1,
+  //     AssetImage iconGambar, String textSidebar) {
+  //   return Container(
+  //     child: Row(
+  //       children: <Widget>[
+  //         Container(
+  //             padding: EdgeInsets.all(8),
+  //             height: MediaQuery.of(context).size.height,
+  //             width: MediaQuery.of(context).size.width * 0.09,
+  //             child: Image(
+  //               image: iconGambar,
+  //               height: 10,
+  //               width: 10,
+  //               fit: BoxFit.fitWidth,
+  //             )),
+  //         Container(
+  //           height: MediaQuery.of(context).size.height,
+  //           width: MediaQuery.of(context).size.width * 0.43,
+  //           child: Text(
+  //             textSidebar,
+  //             style: TextStyle(
+  //                 fontFamily: "Poppins",
+  //                 fontSize: 14,
+  //                 fontWeight: FontWeight.w400,
+  //                 color: Color(0xFFFE5E5E5)),
+  //           ),
+  //           alignment: Alignment.centerLeft,
+  //         ),
+  //         ExpansionTile(
+  //           title: Text("data"),
+  //         ),
+  //       ],
+  //     ),
+  //     height: MediaQuery.of(context).size.height * 0.06,
+  //     width: MediaQuery.of(context).size.width,
+  //     color: warna1,
+  //   );
+  // }
 
   Container reportValue(
       BuildContext context, String valueTotal, String valueType) {

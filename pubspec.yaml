@@ -49,7 +49,10 @@ flutter:
   assets:
     - assets/logo.png
     - assets/img_logo_r_3_lax.png
-    
+    - assets/streamic_katagori.png
+    - assets/box-openic_produk.png
+    - assets/boxesic_inventaris.png
+    - assets/receiptic_penjualan.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
