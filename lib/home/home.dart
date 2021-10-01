@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 int pilihan = 1;
-bool notif = false;
+bool notif = true;
 
 class Home extends StatefulWidget {
   @override
@@ -35,7 +35,8 @@ class _HomeState extends State<Home> {
                     sidebarMenu("Penjualan",
                         AssetImage("assets/receiptic_penjualan.png")),
                     Container(
-                      margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      margin: EdgeInsets.fromLTRB(15, 40, 15, 10),
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               elevation: 1,
@@ -59,7 +60,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Positioned(
-                  top: MediaQuery.of(context).size.height * 0.04,
+                  top: MediaQuery.of(context).size.height * 0.02,
                   bottom: MediaQuery.of(context).size.height * 0.01,
                   left: 16,
                   right: 16,
@@ -68,7 +69,7 @@ class _HomeState extends State<Home> {
                       children: [
                         Positioned(
                             top: 0,
-                            bottom: MediaQuery.of(context).size.height * 0.83,
+                            bottom: MediaQuery.of(context).size.height * 0.88,
                             left: 0,
                             right: 0,
                             child: Container(
@@ -164,18 +165,22 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight.w600),
                         ),
                         IconButton(
-                            icon: notif
-                                ? Icon(Icons.notifications)
-                                : Icon(Icons.notifications_active),
+                            icon: Icon(notif
+                                ? Icons.notifications
+                                : Icons.notifications_active),
                             iconSize:
                                 MediaQuery.of(context).size.height * 0.035,
-                            onPressed: () {})
+                            onPressed: () {
+                              setState(() {
+                                notif = !notif;
+                              });
+                            })
                       ],
                     ),
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                   ),
-                  backgroundColor: Color(0xFFF77A0F7),
+                  backgroundColor: Color(0xFFFFFBD41),
                 ),
               ),
               Positioned(
@@ -304,6 +309,27 @@ class _HomeState extends State<Home> {
                             )),
                       ],
                     ),
+                  )),
+              Positioned(
+                  top: MediaQuery.of(context).size.height * 0.87,
+                  bottom: MediaQuery.of(context).size.height * 0.04,
+                  left: MediaQuery.of(context).size.width * 0.75,
+                  right: MediaQuery.of(context).size.width * 0.07,
+                  child: InkWell(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.0001,
+                      width: MediaQuery.of(context).size.width * 0.02,
+                      child: Center(
+                        child: Image(
+                          height: MediaQuery.of(context).size.height * 0.04,
+                          width: MediaQuery.of(context).size.height * 0.04,
+                          image: AssetImage("assets/cart-plusic_keranjang.png"),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Colors.amber, shape: BoxShape.circle),
+                    ),
+                    onTap: () {},
                   ))
             ],
           ),
@@ -315,15 +341,21 @@ class _HomeState extends State<Home> {
   var trailingIcon = true;
   ExpansionTile sidebarMenu(String judul, AssetImage iconGambar) {
     return ExpansionTile(
-      trailing: trailingIcon == false
-          ? Icon(
-              Icons.chevron_right,
-              color: Color(0xFFFFFBD41),
-            )
-          : Icon(
-              Icons.keyboard_arrow_down,
-              color: Color(0xFFFFFBD41),
-            ),
+      trailing: IconButton(
+          icon: Icon(
+              trailingIcon ? Icons.chevron_right : Icons.keyboard_arrow_down),
+          onPressed: () {
+            setState(() {});
+          }),
+      // trailingIcon != trailingIcon
+      //     ? Icon(
+      //         Icons.chevron_right,
+      //         color: Color(0xFFFFFBD41),
+      //       )
+      //     : Icon(
+      //         Icons.keyboard_arrow_down,
+      //         color: Color(0xFFFFFBD41),
+      //       ),
       leading: Image(
         image: iconGambar,
         height: MediaQuery.of(context).size.height * 0.025,
@@ -401,7 +433,7 @@ class _HomeState extends State<Home> {
           Text(valueTotal,
               style: TextStyle(
                   fontSize: MediaQuery.of(context).size.height * 0.03,
-                  color: Color(0xFFF77A0F7),
+                  color: Color(0xFFFFFBD41),
                   fontWeight: FontWeight.w600,
                   fontFamily: "Poppins")),
           Text(valueType,
