@@ -1,3 +1,4 @@
+import 'package:explore_pos_karamel/login/login.dart';
 import 'package:flutter/material.dart';
 
 int pilihan = 1;
@@ -47,7 +48,12 @@ class _HomeState extends State<Home> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(16))),
                               primary: Color(0xFFFFFFFFF)),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login()));
+                          },
                           child: Text(
                             "Keluar",
                             style: TextStyle(
@@ -285,6 +291,7 @@ class _HomeState extends State<Home> {
                                     fontSize:
                                         MediaQuery.of(context).size.height *
                                             0.025,
+                                    color: Color(0xFFF808080),
                                     fontFamily: "Poppins",
                                     fontWeight: FontWeight.w600),
                               ),
@@ -311,26 +318,35 @@ class _HomeState extends State<Home> {
                     ),
                   )),
               Positioned(
-                  top: MediaQuery.of(context).size.height * 0.87,
-                  bottom: MediaQuery.of(context).size.height * 0.04,
-                  left: MediaQuery.of(context).size.width * 0.75,
-                  right: MediaQuery.of(context).size.width * 0.07,
-                  child: InkWell(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.0001,
-                      width: MediaQuery.of(context).size.width * 0.02,
-                      child: Center(
-                        child: Image(
-                          height: MediaQuery.of(context).size.height * 0.04,
-                          width: MediaQuery.of(context).size.height * 0.04,
-                          image: AssetImage("assets/cart-plusic_keranjang.png"),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          color: Colors.amber, shape: BoxShape.circle),
-                    ),
-                    onTap: () {},
-                  ))
+                top: MediaQuery.of(context).size.height * 0.87,
+                bottom: MediaQuery.of(context).size.height * 0.04,
+                left: MediaQuery.of(context).size.width * 0.75,
+                right: MediaQuery.of(context).size.width * 0.07,
+                child: FloatingActionButton(
+                  child: Image(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                    width: MediaQuery.of(context).size.height * 0.04,
+                    image: AssetImage("assets/cart-plusic_keranjang.png"),
+                  ),
+                  backgroundColor: Color(0xFFFFFBD41),
+                ),
+                // child: InkWell(
+                //   child: Container(
+                //     height: MediaQuery.of(context).size.height * 0.0001,
+                //     width: MediaQuery.of(context).size.width * 0.02,
+                //     child: Center(
+                //       child: Image(
+                //         height: MediaQuery.of(context).size.height * 0.04,
+                //         width: MediaQuery.of(context).size.height * 0.04,
+                //         image: AssetImage("assets/cart-plusic_keranjang.png"),
+                //       ),
+                //     ),
+                //     decoration: BoxDecoration(
+                //         color: Colors.amber, shape: BoxShape.circle),
+                //   ),
+                //   onTap: () {},
+                // )
+              )
             ],
           ),
         ),
@@ -339,6 +355,7 @@ class _HomeState extends State<Home> {
   }
 
   var trailingIcon = true;
+
   ExpansionTile sidebarMenu(String judul, AssetImage iconGambar) {
     return ExpansionTile(
       trailing: IconButton(
